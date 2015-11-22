@@ -1,4 +1,9 @@
 bower_components/
 .sass-cache
 styles/main.css
+styles/main.min.css
 styles/main.css.map
+scripts/main.min.js
+node_modules/
+dest**
+src**
