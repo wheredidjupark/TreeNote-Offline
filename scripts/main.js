@@ -80,6 +80,7 @@ $(document).ready(function() {
 
 
             $("#app").on("keydown", ".value", function(e) {
+
                 // console.log("You pressed the key with the following keycode", e.keyCode);
                 var textVal = $(this).text();
                 var htmlVal = $(this).html();
@@ -196,7 +197,7 @@ $(document).ready(function() {
                 };
 
                 //ENTER: Create a new sibling node. Focus on the newly created sibling node.
-                if (e.keyCode === KEY_ENTER && !e.shiftKey) {
+                if (e.keyCode === KEY_ENTER && !e.shiftKey && !e.metaKey) {
                     e.preventDefault();
                     $node.after(createNode());
                     $node.next().children(".value").focus();
@@ -205,6 +206,11 @@ $(document).ready(function() {
                 if (e.keyCode === KEY_ENTER && e.shiftKey) {
                     e.preventDefault();
                     toggleExpand($node);
+                }
+
+                if (e.keyCode === KEY_ENTER && e.metaKey) {
+                    e.preventDefault();
+                    $node.toggleClass("completed");
                 }
 
                 //DOWNARROW: focus on the next node
@@ -316,6 +322,8 @@ $(document).ready(function() {
                     $(this).focus();
 
                 }
+
+
 
                 saveData();
 
