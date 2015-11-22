@@ -10,15 +10,6 @@ module.exports = function(grunt) {
                 dest: "scripts/main.min.js"
             }
         },
-        cssmin: {
-            main: {
-                src: ["styles/main.css"],
-                dest: "styles/main.min.css"
-            }
-        },
-        jshint: {
-            src: ["Gruntfile.js", "scripts/main.js"]
-        },
         sass: {
             main: {
                 options: {
@@ -31,10 +22,20 @@ module.exports = function(grunt) {
                 }
 
             }
+        },
+        cssmin: {
+            main: {
+                src: ["styles/main.css"],
+                dest: "styles/main.min.css"
+            }
+        },
+        jshint: {
+            src: ["Gruntfile.js", "scripts/main.js"]
         }
+
     });
 
-    grunt.registerTask('default', ['uglify', 'cssmin', 'purifycss', 'sass']);
-    grunt.registerTask("build", ['uglify', 'cssmin', 'purifycss', 'sass']);
+    grunt.registerTask('default', ['uglify', 'cssmin', 'sass']);
+    grunt.registerTask("build", ['uglify', 'cssmin', 'sass']);
 
 };
