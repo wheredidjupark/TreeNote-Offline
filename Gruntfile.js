@@ -11,21 +11,14 @@ module.exports = function(grunt) {
             }
         },
         sass: {
-            main: {
-                options: {
-                    style: "compressed",
-                    trace: true
-                },
-                files: {
-                    src: ["styles/main.scss"],
-                    dest: "styles/main.css"
-                }
-
+            dist: {
+                src: ["styles/main.scss"],
+                dest: "styles/main.css"
             }
         },
         cssmin: {
             main: {
-                src: ["styles/main.css"],
+                src: "styles/main.css",
                 dest: "styles/main.min.css"
             }
         },
@@ -35,7 +28,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['uglify', 'cssmin', 'sass']);
-    grunt.registerTask("build", ['uglify', 'cssmin', 'sass']);
+    grunt.registerTask('default', ['uglify',  'sass', 'cssmin']);
+    grunt.registerTask("build", ['uglify', 'sass', 'cssmin']);
 
 };
