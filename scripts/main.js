@@ -62,6 +62,10 @@ $(document).ready(function() {
         if (appContent.length === 0) {
             $("#app").append(createNode());
         }
+
+        if($(".completed").hasClass("hidden")){
+            $("#checkbox").prop("checked", true);
+        }
     };
 
     var toggleExpand = function(node) {
@@ -211,6 +215,11 @@ $(document).ready(function() {
                 if (e.keyCode === KEY_ENTER && e.metaKey) {
                     e.preventDefault();
                     $node.toggleClass("completed");
+                    if ($("#checkbox").is(":checked")) {
+                        $node.toggleClass("hidden", true);
+                    } else {
+                        $node.toggleClass("hidden", false);
+                    }
                 }
 
                 //DOWNARROW: focus on the next node
@@ -456,7 +465,11 @@ $(document).ready(function() {
 
                 var $node = $(this).closest(".node");
                 $node.toggleClass("completed"); //indicate complete tag on node
-
+                if ($("#checkbox").is(":checked")) {
+                    $node.toggleClass("hidden", true);
+                } else {
+                    $node.toggleClass("hidden", false);
+                }
                 saveData();
             });
 
@@ -486,8 +499,26 @@ $(document).ready(function() {
             });
 
         };
+
+        var clickCompleteForm = function() {
+
+            $("#checkbox").click(function(e) {
+                var bool = $(this).is(':checked');
+                console.log(bool);
+
+
+                if (bool) {
+                    $(".completed").toggleClass("hidden", true);
+                } else {
+                    $(".completed").toggleClass("hidden", false);
+                }
+
+            });
+        };
+
         clickBullet();
         clickCtrlBar();
+        clickCompleteForm();
     };
 
     initialize();

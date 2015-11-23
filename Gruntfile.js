@@ -24,11 +24,21 @@ module.exports = function(grunt) {
         },
         jshint: {
             src: ["Gruntfile.js", "scripts/main.js"]
+        },
+        watch: {
+            scripts: {
+                files: ["scripts/main.js"],
+                tasks: ["uglify"]
+            },
+            styles: {
+                files: ["styles/main.scss"],
+                tasks: ["sass", "cssmin"]
+            }
         }
 
     });
 
-    grunt.registerTask('default', ['uglify',  'sass', 'cssmin']);
+    grunt.registerTask('default', ['uglify', 'sass', 'cssmin', 'watch']);
     grunt.registerTask("build", ['uglify', 'sass', 'cssmin']);
 
 };
