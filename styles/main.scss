@@ -76,6 +76,54 @@
         }
     }
     
+    @media screen and (max-width: 1080px) and (min-width: 721px) {
+        #app {
+            max-width: 80%;
+            margin: 10px auto;
+            background-color: white;
+            padding: 10px 13px;
+            min-height: 65%;
+            @include border-box;
+            @include box-shadow;
+        }
+        #manual {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            #manual-button {
+                float: left;
+                margin-bottom: 20px;
+            }
+            #manual-content {
+                clear: left;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 720px) {
+        #app {
+            max-width: 100%;
+            margin: 10px 0;
+            background-color: white;
+            padding: 10px 13px;
+            min-height: 30%;
+            @include border-box;
+            @include box-shadow;
+        }
+        #manual {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            #manual-button {
+                float: left;
+                margin-bottom: 20px;
+            }
+            #manual-content {
+                clear: left;
+            }
+        }
+    }
+    
     .node {
         margin: 5px 0;
         position: relative;
@@ -159,52 +207,4 @@
         position: fixed;
         top: 0;
         left: 0;
-    }
-    
-    @media screen and (max-width: 1080px) and (min-width: 721px) {
-        #app {
-            max-width: 80%;
-            margin: 10px auto;
-            background-color: white;
-            padding: 10px 13px;
-            min-height: 65%;
-            @include border-box;
-            @include box-shadow;
-        }
-        #manual {
-            margin-top: 20px;
-            position: relative;
-            width: 100%;
-            #manual-button {
-                float: left;
-                margin-bottom: 20px;
-            }
-            #manual-content {
-                clear: left;
-            }
-        }
-    }
-    
-    @media screen and (max-width: 720px) {
-        #app {
-            max-width: 100%;
-            margin: 10px 0;
-            background-color: white;
-            padding: 10px 13px;
-            min-height: 30%;
-            @include border-box;
-            @include box-shadow;
-        }
-        #manual {
-            margin-top: 20px;
-            position: relative;
-            width: 100%;
-            #manual-button {
-                float: left;
-                margin-bottom: 20px;
-            }
-            #manual-content {
-                clear: left;
-            }
-        }
     }
