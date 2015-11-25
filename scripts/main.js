@@ -63,7 +63,7 @@ $(document).ready(function() {
             $("#app").append(createNode());
         }
 
-        if($(".completed").hasClass("hidden")){
+        if ($(".completed").hasClass("hidden")) {
             $("#checkbox").prop("checked", true);
         }
     };
@@ -516,9 +516,19 @@ $(document).ready(function() {
             });
         };
 
+
+        var clickManualButton = function() {
+            $("#manual-button").click(function(e) {
+                e.preventDefault();
+
+                $("#manual-content").toggleClass("hidden");
+            });
+        };
+
         clickBullet();
         clickCtrlBar();
         clickCompleteForm();
+        clickManualButton();
     };
 
     initialize();

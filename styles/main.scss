@@ -138,8 +138,23 @@
     .hidden {
         display: none;
     }
-
+    
     #checkboxForm {
-        text-align: right;
-        margin-right: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    #manual {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 15%;
+        #manual-button {
+            float: right;
+            margin-bottom: 20px;
+        }
+        #manual-content {
+            clear: right;
+        }
     }

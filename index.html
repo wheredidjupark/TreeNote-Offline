@@ -15,6 +15,19 @@
         <label for="checkbox">Hide Completed Tasks</label>
     </form>
     <div id="app"></div>
+    <div id="manual">
+        <button id="manual-button">Show/Hide Manual</button>
+        <div id="manual-content">
+            <p><strong>Enter:</strong> Create a new task</p>
+            <p><strong>Tab:</strong> Shift the task</p>
+            <p><strong>Delete:</strong> Delete text</p>
+            <p><strong>Shift + Enter:</strong> Toggle collapse</p>
+            <p><strong>Command + Enter:</strong> Complete task</p>
+            <p><strong>Shift + Tab:</strong> Unshift the task</p>
+            <p><strong>Shift + Delete:</strong> Delete task and its children (By default, task with child cannot be removed with delete key)</p>
+            <p><strong>Hover over Bullet:</strong> Selection menu</p>
+        </div>
+    </div>
     <footer id="footer"> &copy; 2015 Ju Park All Rights Reserved</footer>
 </body>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
